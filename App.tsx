@@ -10,6 +10,9 @@ export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
+        <Image source={require('./assets/Business Cards.png')} style={styles.image} />
+
+
         <Text style={styles.header}>My Info Card</Text>
       </ScrollView>
     </SafeAreaView>
