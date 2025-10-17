@@ -6,6 +6,7 @@ export default function App() {
   const [name, setName] = useState('');
   const [hobby, setHobby] = useState('');
   const [message, setMessage] = useState('Welcome to my app');
+  const [destination, setDestination] = useState('');
 
   return (
     <SafeAreaView style={styles.container}>
@@ -30,12 +31,19 @@ export default function App() {
   onChangeText={setHobby}
 />
 
-<Button title="Show Greeting" onPress={() => setMessage(`Hello ${name}, enjoy ${hobby}`)} />
+<TextInput style={styles.input}
+  placeholder="Where is your dream travel destination?"
+  value={destination}
+  onChangeText={setDestination}
+/>
+
+<Button title="Show Greeting" onPress={() => setMessage(`Hello ${name}, enjoy ${hobby},going to${destination}`)} />
 
   
 <View style={styles.card}>
   <Text style={styles.cardText}>Hello, {name}</Text>
   <Text style={styles.cardText}>Your hobby is {hobby}</Text>
+  <Text style={styles.cardText}>Dream Travel Destination: {destination}</Text>
 </View>
 
 <Image source={{ uri: 'https://picsum.photos/200' }} style={styles.onlineImage} />
@@ -61,7 +69,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#2103b4ff',
     padding: 20
   },
   header: {
